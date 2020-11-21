@@ -9,7 +9,7 @@ body{
   width: 100vw;
 }
 .login-box{
-  width: 280px;
+  width: 40vh;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,4 +64,14 @@ body{
   font-weight: 300;
   border: 2px solid white;
   border-radius: 10px;
+}
+
+marquee span{
+  
+  color: #0748fc;
+  font-weight: 500;
+}
+marquee {
+  color: black;
+  font-weight: 700;
 }
