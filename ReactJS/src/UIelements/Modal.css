@@ -2,8 +2,8 @@
     z-index: 100;
     position: fixed;
     top: 22vh;
-    left: 10%;
-    width: 80%;
+    left: 10vh;
+    width: 80vh;
     max-width: 200rem;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -11,9 +11,9 @@
   }
   
   .modal__header {
-    width:100%;
     
-    max-width: 200rem;
+    
+    max-width: 210rem;
     padding: 1rem 0.5rem;
     background: #2a006e;
     color: white;
@@ -24,6 +24,8 @@
   }
   
   .modal__content {
+    width: 100%;
+    max-width: 210rem;
     padding: 1rem 0.5rem;
     color: darkblue;
   }
@@ -34,8 +36,8 @@
   
   @media (min-width: 768px) {
     .modal {
-      left: calc(30% - 20rem);
-      width: 75%;
+      left: calc(10%);
+      width: 80%;
     }
   }
   

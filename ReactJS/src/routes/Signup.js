@@ -14,16 +14,25 @@ const Signup=()=>{
         const signupHandler=async (event)=>{
             event.preventDefault();
             let data;
+            if(String(document.getElementById("password").value).length<6){
+                seterror("Password length should be greater than 5")
+                return;
+            }
             if(document.getElementById("password").value===document.getElementById("cpassword").value)
             try{
             data= await sendRequest(
-                `url`,
+                `http://localhost:5000/login`,
                 'POST',
                 {'Content-Type':'application/json'},
                 JSON.stringify({
                         email:document.getElementById("email").value,
-                        password:document.getElementById("password").value
+                        password:document.getElementById("password").value,
+                        login:0
                 }));
+                
+            if(data==="sent")
+            alert("Verification email sent to your Mail Id,Please check once")
+            else alert("Please give proper Mail Id")
             }
             catch(err){
                 console.log(err);

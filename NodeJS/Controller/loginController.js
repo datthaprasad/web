@@ -1,0 +1,76 @@
+var nodemailer = require("nodemailer");
+const User=require('../Model/UserSchema')
+
+var rand,mailOptions,host,link,email,password;
+
+const sendMail=async function(req,res){
+    if(req.body.login===0){
+    var smtpTransport = nodemailer.createTransport("SMTP",{
+        service:"Gmail",
+        secure: false,
+        auth: {
+            user: "jobportal.sit.valachil@gmail.com",
+            pass: "123abc456def"
+        },
+        tls: {
+            rejectUnauthorized: false
+          }
+    });
+
+    rand=Math.floor((Math.random() * 100) + 54);
+    host=req.get('host');
+    link="http://"+req.get('host')+"/verify?id="+rand;
+
+    mailOptions={
+        to : req.body.email,
+        subject : "Please confirm your Email account",
+        html : "Hello,<br> Please Click on the link to verify your email for <bold>ENGINEERS JOB PORTAL</bold>.<br><a href="+link+">Click here to verify</a><br>Thank you." 
+    }
+
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+        res.end("something went wrong"+error);
+     }else{
+        res.json("sent");
+         }
+});}
+else{
+    try{
+        let existingUser=await User.findOne({email:req.body.email})
+        if(!existingUser) res.json("user not found")
+        
+    }
+    catch(err){
+        res.json("user not found");
+    }
+}
+}
+
+const verifyMail=async function(req,res){
+    console.log(req.protocol+":/"+req.get('host'));
+    if((req.protocol+"://"+req.get('host'))==("http://"+host))
+    {
+        if(req.query.id==rand)
+        {
+            const user=new User({email,password});
+            try{
+                await user.save();
+            }
+            catch(err){
+                console.log("cant save"+err);
+            }
+            res.end("<h1>Email "+mailOptions.to+" is been Successfully verified, you can login now");
+        }
+        else
+        {
+            res.end("<h1>Email is not verified</h1>");
+        }
+    }
+    else
+    {
+        res.end("<h1>Request is from unknown source");
+    }
+    }
+
+exports.sendMail=sendMail;
+exports.verifyMail=verifyMail;
