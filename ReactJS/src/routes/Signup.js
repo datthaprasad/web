@@ -32,7 +32,10 @@ const Signup=()=>{
                 
             if(data==="sent")
             alert("Verification email sent to your Mail Id,Please check once")
-            else alert("Please give proper Mail Id")
+            else if("Email done") 
+                seterror("Email already taken")
+            else
+                seterror("Please give proper Mail Id")
             }
             catch(err){
                 console.log(err);

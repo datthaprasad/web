@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
 
 import ErrorModel from '../UIelements/Error';
 import LoadingSpinner from '../UIelements/LoadingSpinner'
 import {useHttpClient} from '../Hooks/Http-Hook'
+import { useHistory } from 'react-router-dom';
+import { AuthContext } from '../Hooks/AuthContext';
 
 
 const Login=()=>{
 
+    const auth=useContext(AuthContext)
+    const history = useHistory();
     const [login_error,seterror]=useState();
     const {isLoading,error,sendRequest,clearError}=useHttpClient();
 
@@ -15,7 +19,6 @@ const Login=()=>{
         event.preventDefault();
         let data;
         try{
-            console.log("ok");
         data= await sendRequest(
             `http://localhost:5000/login`,
             'POST',
@@ -25,14 +28,22 @@ const Login=()=>{
                     password:document.getElementById("password").value,
                     login:1
             }));
-            if(data==="user not found")
+            if(data==="user not found"){
                 seterror("You dont have valid Account, create one");
-            // else alert("Please give proper Mail Id")
+            }
+            else if(data==="password is incorrect")
+                seterror("Password is Incorrect")
+            else if(data==="login successfull"){
+                auth.LOGIN(document.getElementById("email").value)
+                history.push('/');
+            }
+            else{
+                seterror("Something went wrong, please try again later")
+            }
         }
         catch(err){
             console.log(err);
         }
-        console.log(data);
     }
 
 

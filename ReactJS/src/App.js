@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import {BrowserRouter,Redirect,Switch,Route} from 'react-router-dom'
+import {AuthContext} from './Hooks/AuthContext'
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 function App() {
 
   
-  // const [UserId,setUserID]=useState(null);
-  // const [Phonen,setPhone]=useState(null);
-  // const [Playerss,setPlayers]=useState([]);
-  // const [isLogedIn,SetLogedIn]=useState(false);
+  const [email,setEmail]=useState(null);
+  const [isLogedIn,setLogedIn]=useState(false);
    
 
-  // const Login1 = useCallback((id,phone,players)=>{
-  //   console.log(id+" "+phone+" "+players);
-  //   setUserID(id);
-  //   SetLogedIn(true);
-  //   setPhone(phone);
-  //   setPlayers(players)
-  // },[]);
+  const Login1 = useCallback((email)=>{
+    setEmail(email);
+    setLogedIn(true);
+  },[]);
+
+  const Logout1=useCallback(()=>{
+    setEmail(null);
+    setLogedIn(false)
+  },[]);
 
   
   return (
     
-    <div>   
+     
+    <AuthContext.Provider value={{isLogedIn:isLogedIn,email:email,LOGIN:Login1,LOGOUT:Logout1}} >
       <React.Fragment>
       <BrowserRouter>
         <Switch>
@@ -38,14 +40,11 @@ function App() {
           <Route path='/courses' exact>
             {/* <Course/> */}
           </Route>
-          <Route path='/logout' >
-  
-          </Route>
           <Redirect to='/'/>
         </Switch>
       </BrowserRouter>
       </React.Fragment>
-      </div> 
+      </AuthContext.Provider> 
     
   );
   }

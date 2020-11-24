@@ -1,10 +1,23 @@
 var nodemailer = require("nodemailer");
 const User=require('../Model/UserSchema')
 
-var rand,mailOptions,host,link,email,password;
+let rand,mailOptions,host,link,email,password;
 
 const sendMail=async function(req,res){
+    email=req.body.email
+    password=req.body.password
+    let existingUser;
+    try{
+        existingUser=await User.findOne({email:email})
+    }
+    catch(err){
+        res.json("Cant find user"+err)
+    }
     if(req.body.login===0){
+    if(existingUser){
+        res.json("Email done")
+    }
+    else{
     var smtpTransport = nodemailer.createTransport("SMTP",{
         service:"Gmail",
         secure: false,
@@ -33,33 +46,36 @@ const sendMail=async function(req,res){
      }else{
         res.json("sent");
          }
-});}
-else{
-    try{
-        let existingUser=await User.findOne({email:req.body.email})
-        if(!existingUser) res.json("user not found")
         
+});}
     }
-    catch(err){
-        res.json("user not found");
-    }
+else{
+            if(req.body.password===existingUser.password)
+            res.json("login successfull")
+            else
+                res.json("password is incorrect")
+        
+        
+    
+    
 }
 }
 
 const verifyMail=async function(req,res){
-    console.log(req.protocol+":/"+req.get('host'));
     if((req.protocol+"://"+req.get('host'))==("http://"+host))
     {
         if(req.query.id==rand)
         {
+            console.log("email "+email+" and "+password);
             const user=new User({email,password});
+            console.log("user is "+user);
             try{
                 await user.save();
+                res.end("<h1>Email "+mailOptions.to+" is been Successfully verified, you can login now");
             }
             catch(err){
-                console.log("cant save"+err);
+                res.json("cant save"+err);
             }
-            res.end("<h1>Email "+mailOptions.to+" is been Successfully verified, you can login now");
         }
         else
         {
