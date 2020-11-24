@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import {BrowserRouter,Redirect,Switch,Route} from 'react-router-dom'
+import MainNav from './navbar/MainNav';
 import {AuthContext} from './Hooks/AuthContext'
 import Login from './routes/Login';
 import Signup from './routes/Signup';
@@ -28,6 +29,9 @@ function App() {
       <React.Fragment>
       <BrowserRouter>
         <Switch>
+          <Route path='/' exact>
+            <MainNav/>
+          </Route>
           <Route path='/login' exact>
             <Login/>
           </Route>
@@ -41,6 +45,7 @@ function App() {
             {/* <Course/> */}
           </Route>
           <Redirect to='/'/>
+            <MainNav/>
         </Switch>
       </BrowserRouter>
       </React.Fragment>
