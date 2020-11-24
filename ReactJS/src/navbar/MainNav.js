@@ -15,7 +15,7 @@ const [drawerisopen,setdrawer]=useState(false);
 const open=()=>{
     setdrawer(true)
 }
-function close(){
+const close=()=>{
     setdrawer(false)
 }
 
@@ -27,7 +27,6 @@ function close(){
           <Side show={drawerisopen} onClick={close}>
              <nav className="main-navigation__drawer-nav">
              <NavLinkss/>
-
              </nav>
 
          </Side>

@@ -7,21 +7,20 @@ import {AuthContext} from '../Hooks/AuthContext'
 
 const NavLinkss=props=>{
     const auth=useContext(AuthContext);
-    const myplace="/"+auth.userId+"/places";
     return <ul className="nav-links">
         <li key='1'>
-        <NavLink to='/' exact> All users</NavLink>
+        <a href='/' exact>Home</a>
         </li>
         {!auth.isLogedIn && <li key='2'>
-        <NavLink to={myplace}> My places</NavLink>
+        <NavLink to='/courses'>Courses</NavLink>
         </li>}
         {!auth.isLogedIn && <li key='3'>
-        <NavLink to='/place/new'> New place</NavLink>
+        <NavLink to='/place/new'>Drive</NavLink>
         </li>}
         {!auth.isLogedIn && <li key='4'>
-         <NavLink to="/auth">AUTHENTICATE</NavLink>
+         <NavLink to="/login">Login</NavLink>
         </li>}
-        {!auth.isLogedIn && <li>
+        {auth.isLogedIn && <li>
           <button onClick={auth.Logout}>Logout</button>
         </li>}
     </ul>
