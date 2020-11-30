@@ -19,7 +19,7 @@ app.post('/login',loginController.sendMail);
 
 app.get('/verify',loginController.verifyMail);
 
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.json("hai ReactJS, connection done")
 })
 

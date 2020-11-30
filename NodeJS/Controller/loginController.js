@@ -11,7 +11,8 @@ const sendMail=async function(req,res){
         existingUser=await User.findOne({email:email})
     }
     catch(err){
-        res.json("Cant find user"+err)
+        res.json("user not found")
+        return;
     }
     if(req.body.login===0){
     if(existingUser){
@@ -50,7 +51,8 @@ const sendMail=async function(req,res){
 });}
     }
 else{
-            if(req.body.password===existingUser.password)
+            if(!existingUser) res.json("user not found");
+            else if(req.body.password===existingUser.password)
             res.json("login successfull")
             else
                 res.json("password is incorrect")

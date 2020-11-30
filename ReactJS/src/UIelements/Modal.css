@@ -8,6 +8,7 @@
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 8px;
+    border: double black;
   }
   
   .modal__header {
@@ -15,7 +16,7 @@
     
     max-width: 210rem;
     padding: 1rem 0.5rem;
-    background: #2a006e;
+    background: #0748fc;
     color: white;
   }
   
@@ -27,7 +28,8 @@
     width: 100%;
     max-width: 210rem;
     padding: 1rem 0.5rem;
-    color: darkblue;
+    font-size: 25px;
+    color: black;
   }
   
   .modal__footer {

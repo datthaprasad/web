@@ -4,6 +4,7 @@ import MainNav from './navbar/MainNav';
 import {AuthContext} from './Hooks/AuthContext'
 import Login from './routes/Login';
 import Signup from './routes/Signup';
+import Home from './routes/Home'
 function App() {
 
   
@@ -31,11 +32,14 @@ function App() {
         <Switch>
           <Route path='/' exact>
             <MainNav/>
+            <Home/>
           </Route>
           <Route path='/login' exact>
+          <MainNav/>
             <Login/>
           </Route>
           <Route path='/signup' exact>
+          <MainNav/>
             <Signup/>
           </Route>
           <Route path='/companies' exact>
@@ -46,6 +50,7 @@ function App() {
           </Route>
           <Redirect to='/'/>
             <MainNav/>
+            <Home/>
         </Switch>
       </BrowserRouter>
       </React.Fragment>

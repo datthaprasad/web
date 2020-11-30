@@ -28,15 +28,15 @@ export const useHttpClient = () => {
         );
 
         if (!response.ok) {
-          throw new Error(responseData.message);
+          throw new Error("Something went wrong");
         }
 
         setIsLoading(false);
         return responseData;
       } catch (err) {
-        console.log('dps'+err.message);
+        console.log('dps'+err);
         
-        setError(err.message);
+        setError('Please provide valid email');
         setIsLoading(false);
         throw err;
       }

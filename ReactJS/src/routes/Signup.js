@@ -3,6 +3,7 @@ import './Login.css'
 import ErrorModel from '../UIelements/Error';
 import LoadingSpinner from '../UIelements/LoadingSpinner'
 import {useHttpClient} from '../Hooks/Http-Hook'
+import { Link } from 'react-router-dom';
 
 
 const Signup=()=>{
@@ -10,18 +11,27 @@ const Signup=()=>{
     
         const {isLoading,error,sendRequest,clearError}=useHttpClient();
         const [pass_error,seterror]=useState();
+        const [header,setHeader]=useState();
     
         const signupHandler=async (event)=>{
             event.preventDefault();
             let data;
-            if(String(document.getElementById("password").value).length<6){
-                seterror("Password length should be greater than 5")
+
+            if(String(document.getElementById("email").value).length===0){
+                seterror("Email can not be empty")
+                setHeader("Email requirements")
                 return;
             }
+            if(String(document.getElementById("password").value).length<6){
+                seterror("Password length should be greater than 5")
+                setHeader("Password requirements")
+                return;
+            }
+            
             if(document.getElementById("password").value===document.getElementById("cpassword").value)
             try{
             data= await sendRequest(
-                `http://localhost:5000/login`,
+                `https://web-mini.herokuapp.com/login`,
                 'POST',
                 {'Content-Type':'application/json'},
                 JSON.stringify({
@@ -30,18 +40,28 @@ const Signup=()=>{
                         login:0
                 }));
                 
-            if(data==="sent")
-            alert("Verification email sent to your Mail Id,Please check once")
-            else if("Email done") 
+            if(data==="sent"){
+                setHeader("Verify your Account")
+                seterror("Verification mail sent to given mail, Please check.")
+            }
+            else if(data==="Email done") {
                 seterror("Email already taken")
-            else
+                setHeader("Signup failed")
+            }
+
+            else{
                 seterror("Please give proper Mail Id")
+                setHeader("Signup failed")
+            }
             }
             catch(err){
                 console.log(err);
+                seterror("Please provide valid email")
+                setHeader("Signup failed")
             }
             else{
                 seterror("Passwords are not matching")
+                setHeader("Password requirements")
             }
         }
 
@@ -50,8 +70,8 @@ const Signup=()=>{
 
         <React.Fragment >  
             {/* {/* {isLoading1 && <LoadingSpinner asOverlay/>} */}
-            {pass_error && <ErrorModel error={pass_error} onClear={()=>{seterror()}}/>} 
-            {error && <ErrorModel error={error} onClear={clearError}/>}
+            {pass_error && <ErrorModel header={header} error={pass_error} onClear={()=>{seterror()}}/>} 
+            {error && <ErrorModel header={header} error={error} onClear={clearError}/>}
             {isLoading && <LoadingSpinner asOverlay/>}
         <marquee>
             <span>SRINIVAS INSTITUTE OF TECHNOLOGY,VALACHIL  </span>
@@ -75,6 +95,7 @@ const Signup=()=>{
             </div>
 
         <input onClick={signupHandler} type="button" class="btn" value="Sign up"/>
+        <h4>Already have an account?<Link to='/login'><a class='btnx'>Login</a></Link></h4>
         </div>}
         </React.Fragment>
 
