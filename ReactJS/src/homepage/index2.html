@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" />
+<style>
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.text-block img{ 
+    width: 20vh;
+}
+.text-block-black{
+    padding: 4vh;
+background-color: black;
+}
+.top-left {
+  position: absolute;
+  top: 2vh;
+  left: 2vh;
+  width: 10%;
+}
+
+div.main {
+  height: 100vh;
+  /* display: flex; */
+  align-items: center;
+  background-color: #042747;
+  
+  
+}
+.box{
+  /* padding-top: 5%;
+  padding-left: 10%; */
+  padding-top:3% ;
+  padding-left:10% ;
+  padding-right: 10%;
+  display: block;
+  float: left;
+  width: 50%;
+}
+.img{
+  width: 100%;
+}
+</style>
+</head>
+<body>
+
+<h2>Image Text Blocks</h2>
+<p>How to place text blocks over an image:</p>
+
+
+<div class="text-container">
+         
+    <video src="particles.mp4"muted=""autoplay=""></video>
+    <h1><span>W</span>ELCOME, TO<span> JOB</span>  PORTAL</h1>
+
+    
+  </div>
+
+<div class="container">
+  <img src="clg.jpg" alt="SIT" style="width:100%;height:75vh;">
+  
+  <img class="top-left" src="sit.jpg" alt="">
+  <div class="text-block">
+      <div class="text-block-black">
+    <h4>Nature</h4>
+    <p>Advancements in technology and communication have brought the world closer than ever before.
+        The Srinivas Institute of Technology (SIT) was established in 2006 with the aim of producing
+         world class technology graduates tuned to the demands of a fast changing global village. SIT
+         has gained the name as the best, self financed, engineering college in Karnataka in terms of
+         infrastructural facilities. </p>
+        </div>
+  </div>
+</div>
+<div class="company">
+    <h2>COMPENIES</h2>
+  </div>
+
+
+   <main>
+    <div class="box">
+   <img src="amazon.png"alt="invalid url"border="3"style="border-color:#555"></div>
+   <div class="box">
+   <img src="bsnl.png"alt="invalid url"border="3"style="border-color:#555"></div>
+   <div class="box">
+    <img src="infosys.jpg"alt="invalid url"border="3"style="border-color:#555"></div>
+    <div class="box">
+    <img src="robosoft.png"alt="invalid url"border="3"style="border-color:#555"></div>
+    <div class="box">
+      <img src="wipro.png"alt="invalid url"border="3"style="border-color:#555"></div>
+      <div class="box">
+      <img src="Tech-Mahindra.png"alt="invalid url"border="3"style="border-color:#555"></div>
+   </main>
+</body>
+</html> 
