@@ -5,6 +5,8 @@ import {AuthContext} from './Hooks/AuthContext'
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Home from './routes/Home'
+import Drive from './routes/Drive';
+import Course from './routes/Course';
 function App() {
 
   
@@ -42,11 +44,13 @@ function App() {
           <MainNav/>
             <Signup/>
           </Route>
-          <Route path='/companies' exact>
-            {/* <Comapny /> */}
+          <Route path='/drives' exact>
+            <MainNav/>
+            <Drive/>
           </Route>
           <Route path='/courses' exact>
-            {/* <Course/> */}
+            <MainNav/>
+            <Course/>
           </Route>
           <Redirect to='/'/>
             <MainNav/>

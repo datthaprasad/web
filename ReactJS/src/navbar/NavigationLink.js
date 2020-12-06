@@ -13,13 +13,13 @@ const NavLinkss=props=>{
         <NavLink to='/' exact>Home</NavLink>
         </li>
         {auth.isLogedIn && <li key='2'>
-        <NavLink to='/#'>Courses</NavLink>
+        <NavLink to='/courses'>Courses</NavLink>
         </li>}
         {!auth.isLogedIn && <li key='3'>
         <NavLink to='/signup'>Signup</NavLink>
         </li>}
         {auth.isLogedIn && <li key='3'>
-        <NavLink to='/#'>Drive</NavLink>
+        <NavLink to='/drives'>Drive</NavLink>
         </li>}
         {!auth.isLogedIn && <li key='4'>
          <NavLink to="/login">Login</NavLink>

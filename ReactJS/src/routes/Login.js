@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
 
 import ErrorModel from '../UIelements/Error';
@@ -9,7 +9,14 @@ import { AuthContext } from '../Hooks/AuthContext';
 
 
 const Login=()=>{
-
+    
+    
+  useEffect(()=>{
+    document.body.style.background= "url('https://www.myamcat.com/blog/wp-content/uploads/2016/02/graduation-hats.jpg') no-repeat center";
+    document.body.style.backgroundRepeat="no-repeat";
+    document.body.style.backgroundSize="cover";
+    document.body.style.backgroundPosition="center";
+},[]);
     const auth=useContext(AuthContext)
     const history = useHistory();
     const [login_error,seterror]=useState();
@@ -79,8 +86,8 @@ const Login=()=>{
                 <input id="password" type="password" placeholder="Password"/>
             </div>
 
-        <input onClick={loginHandler} type="button" class="btn" value="Sign in"/>
-        <h4>Don't have an account?<Link to='/signup'><a class='btnx'>Signup</a></Link></h4>
+        <input onClick={loginHandler} type="button" className="btn" value="Sign in"/>
+        <h4>Don't have an account?<Link to='/signup'><a className='btnx'>Signup</a></Link></h4>
         </div>
         </div>}
         </React.Fragment>

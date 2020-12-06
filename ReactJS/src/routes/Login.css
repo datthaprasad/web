@@ -1,15 +1,11 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 body{
   font-family: sans-serif;
-  background: url(../images/image1.jpg) no-repeat center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   width: 100vw;
 }
 .login-box{
-  width: 40vh;
+  width: 40%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -32,7 +28,7 @@ body{
   border-bottom: 1px solid #0748fc;
 }
 .textbox i{
-  width: 26px;
+  width: 10%;
   float: left;
   text-align: center;
 }
@@ -93,6 +89,7 @@ body{
 
 h4{
   color: #0748fc;
+  text-align: center ;
 }
 
 

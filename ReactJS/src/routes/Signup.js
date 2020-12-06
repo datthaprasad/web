@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './Login.css'
 import ErrorModel from '../UIelements/Error';
 import LoadingSpinner from '../UIelements/LoadingSpinner'
@@ -7,7 +7,12 @@ import { Link } from 'react-router-dom';
 
 
 const Signup=()=>{
-
+    useEffect(()=>{
+        document.body.style.background= "url('https://www.myamcat.com/blog/wp-content/uploads/2016/02/graduation-hats.jpg') no-repeat center";
+        document.body.style.backgroundRepeat="no-repeat";
+        document.body.style.backgroundSize="cover";
+        document.body.style.backgroundPosition="center";
+    },[]);
     
         const {isLoading,error,sendRequest,clearError}=useHttpClient();
         const [pass_error,seterror]=useState();
