@@ -28,7 +28,7 @@ const Login=()=>{
         let data;
         try{
         data= await sendRequest(
-            `https://web-mini.herokuapp.com/login`,
+            `http://localhost:5000/login`,
             'POST',
             {'Content-Type':'application/json'},
             JSON.stringify({

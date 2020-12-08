@@ -36,7 +36,7 @@ const Signup=()=>{
             if(document.getElementById("password").value===document.getElementById("cpassword").value)
             try{
             data= await sendRequest(
-                `https://web-mini.herokuapp.com/login`,
+                `http://localhost:5000/login`,
                 'POST',
                 {'Content-Type':'application/json'},
                 JSON.stringify({

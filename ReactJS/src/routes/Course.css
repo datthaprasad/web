@@ -1,0 +1,22 @@
+.btn-group button {
+    width: 33%;
+    background-color: black; /* Green background */
+    border: 3px solid  #0748fc; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color:  #9fb7fa;
+  }
+  .btn-group button:focus{
+      background-color:  #0748fc;
+  }
+  h1{
+      text-align: center;
+      color:  #0748fc;
+      text-shadow: -2px -2px 2px #aaa;
+      text-decoration: double;
+  }

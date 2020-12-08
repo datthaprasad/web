@@ -2,8 +2,8 @@ const express=require('express');
 const bodyParser=require('body-parser');
 const loginController=require('./Controller/loginController')
 const mongoose=require('mongoose');
-const { courseList } = require('./Controller/courseController');
-const { driveList } = require('./Controller/driveController');
+const courseController = require('./Controller/courseController');
+// const { driveList } = require('./Controller/driveController');
 
 const app=express();
 
@@ -19,11 +19,12 @@ app.use((req,res,next)=>{
 
 app.post('/login',loginController.sendMail);
 
+app.post('/course',courseController.courseList);
 app.get('/verify',loginController.verifyMail);
 
-app.get('/course',courseList);
 
-app.get('/drive',driveList);
+
+// app.get('/drive',driveList);
 
 app.get('/',(req,res)=>{
     res.json("hai ReactJS, connection done")

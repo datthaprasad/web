@@ -13,7 +13,10 @@ const CourseList = props => {
   }
 
   return (
-    <ul style={{columnCount:"2",listStyleType:'none'}}>
+    <div style={{textAlign:"center",paddingTop:"3%"}}>
+      {/* <h3>{props.type}</h3> */}
+    <ul style={{listStyleType:'none',textAlign:"center"}}>
+      
       {props.items.map(user => (
         <CourseItem
           key={user.title}
@@ -23,6 +26,7 @@ const CourseList = props => {
         />
       ))}
     </ul>
+    </div>
   );
 };
 
