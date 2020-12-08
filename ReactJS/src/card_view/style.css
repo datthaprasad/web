@@ -1,0 +1,77 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: #f1f1f1;
+    font-family: arial;
+    box-sizing: border-box;
+    }
+    .card-container{
+    width: 30%;
+    height: 55%;
+    background: #FFF;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 1px 10px 1px #000;
+    overflow: hidden;
+    display: inline-block;
+    }
+    .upper-container{
+    height: 150px;
+    background: #042747;
+    }
+    .image-container{
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 70%;
+    padding: 5px;
+    transform: translate(23vh,10vh);
+
+    }
+    .image-container img{
+    width: 100px;
+    height: 100px;
+    border-radius: 70%;
+    }
+    .lower-container{
+    height: 280px;
+    background: #FFF;
+    padding: 20px;
+    padding-top: 40px;
+    text-align: center;
+    }
+    .lower-container h3, h4{
+    box-sizing: border-box;
+    line-height: 1.0;
+    font-weight: lighter;
+    }
+    .lower-container h4{
+    color: #042747;
+    opacity: .6;
+    font-weight: bold;
+    }
+    .lower-container p{
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 30px;
+    }
+    .lower-container .btn{
+    padding: 12px 40px;
+    background: #042747;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease-in;
+    }
+    .lower-container .btn:hover{
+    background: transparent;
+    color: #042747;
+    border: 2px solid #042747;
+    }
