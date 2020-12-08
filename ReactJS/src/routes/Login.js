@@ -46,8 +46,12 @@ const Login=()=>{
                 setHeader("Login Failed")
             }
             else if(data==="login successfull"){
-                auth.LOGIN(document.getElementById("email").value)
+                auth.LOGIN(document.getElementById("email").value,false)
                 history.push('/');
+            }
+            else if(data==="admin"){
+                auth.LOGIN('jobportal.sit.valachil@gmail.com',true);
+                history.push('/')
             }
             else{
                 seterror("Something went wrong, please try again later")
@@ -86,7 +90,7 @@ const Login=()=>{
                 <input id="password" type="password" placeholder="Password"/>
             </div>
 
-        <input onClick={loginHandler} type="button" className="btn" value="Sign in"/>
+        <input onClick={loginHandler} type="button" className="btns" value="Sign in"/>
         <h4>Don't have an account?<Link to='/signup'><a className='btnx'>Signup</a></Link></h4>
         </div>
         </div>}

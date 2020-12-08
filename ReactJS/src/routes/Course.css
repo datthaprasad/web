@@ -7,6 +7,15 @@
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
   }
+
+  .tn{
+    width: 100%;
+    background-color: black; /* Green background */
+    border: 3px solid  #0748fc; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+  }
   /* Add a background color on hover */
   .btn-group button:hover {
     background-color:  #9fb7fa;

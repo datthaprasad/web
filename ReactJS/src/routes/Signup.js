@@ -99,7 +99,7 @@ const Signup=()=>{
                 <input id="cpassword" type="password" placeholder="Confirm Password"/>
             </div>
 
-        <input onClick={signupHandler} type="button" class="btn" value="Sign up"/>
+        <input onClick={signupHandler} type="button" class="btns" value="Sign up"/>
         <h4>Already have an account?<Link to='/login'><a class='btnx'>Login</a></Link></h4>
         </div>}
         </React.Fragment>

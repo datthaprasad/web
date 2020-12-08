@@ -26,12 +26,12 @@ const Home=()=>{
 </div>
 </div>
 <div class="company">
-    <h2>TOP COMPANIES</h2>
+    <h2 style={{"padding":"0%"}}>TOP COMPANIES</h2>
   </div>
 
 
    <main >
-     <div className="dp">
+     <div className="dps">
     <div className="box">
    <img src="https://cdn.theorg.com/aeeb6f05-16cb-470a-bbec-70ab995f99f5_thumb.jpg"alt="image" border="3"style={{"border-color":"#555"}}/></div>
   
