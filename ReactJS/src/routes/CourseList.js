@@ -7,7 +7,7 @@ const CourseList = props => {
   if (props.items.length === 0) {
     return (
       <div className="center">
-        <h2>No users found.</h2>
+        <h2>Course Not Found</h2>
       </div>
     );
   }

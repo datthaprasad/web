@@ -1,25 +1,49 @@
-import React from "react-router-dom"
-import { useHttpClient } from "../Hooks/Http-Hook";
+import React from 'react'
+// import { useHttpClient } from "../Hooks/Http-Hook";
 import "./Drive.css"
-const Drive=async()=>{
+import DriveList from "./DriveList";
+const Drive=()=>{
     
-    const {isLoading,error,sendRequest,clearError}=useHttpClient();
-    let drive;
-    try{
-        drive=await sendRequest(
-            `https://web-mini.herokuapp.com/drive`,
-            'GET',
-            {'Content-Type':'application/json'}
-            );
-    }
-    catch(err){
-        console.log("drive error\n"+err);
-    }
+    // const {isLoading,error,sendRequest,clearError}=useHttpClient();
+    const drive=[
+        {
+            type:"shdghsgd"
+        },
+        {
+            type:"hfhfh"
+        }
+    ];
+    const drive2=[];
+    // const drive2=[
+    //     {
+    //         type:"upcoming"
+    //     },
+    //     {
+    //         type:"upcoming"
+    //     }
+    // ];
+    // try{
+    //     drive=await sendRequest(
+    //         `https://web-mini.herokuapp.com/drive`,
+    //         'POST',
+    //         {'Content-Type':'application/json'},
+    //         JSON.stringify({
+    //             type:"live"
+    //         })
+    //         );
+    // }
+    // catch(err){
+    //     console.log("drive error\n"+err);
+    // }
     
     return(
+        <React.Fragment>
         <div>
-            drive page
+            
+            <DriveList items={drive} items2={drive2}/>
         </div>
+        </React.Fragment>
+
     );
 }
 
