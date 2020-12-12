@@ -36,7 +36,7 @@ export const useHttpClient = () => {
       } catch (err) {
         console.log('dps'+err);
         
-        setError('Please provide valid email');
+        setError('Cant connect to server, try again');
         setIsLoading(false);
         throw err;
       }

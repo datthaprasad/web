@@ -1,4 +1,4 @@
-import React,{ useContext, useState } from "react";
+import React,{ useContext, useEffect, useState } from "react";
 import { useHttpClient } from "../Hooks/Http-Hook"
 import "./Course.css"
 import CourseList from "./CourseList";
@@ -8,6 +8,9 @@ import { useHistory } from "react-router-dom";
 import { AuthContext } from '../Hooks/AuthContext';
 
 const Course=()=>{
+    useEffect((()=>{
+        document.getElementById("btn1").click();
+    }),[])
     const [type,setType]=useState("");
     const [course,setcourse]=useState([]);
     const {isLoading,error,sendRequest,clearError}=useHttpClient();
@@ -88,8 +91,8 @@ const Course=()=>{
             <h1>COURSES YOU WANT</h1>
              {auth.isAdmin && <button className="tn" onClick={form}>New Course</button>}
             <div class="btn-group">
-            <button onClick={typeHandler}>Aptitude series</button>
-            <button onClick={type2Handler}>Technical series</button>
+            <button  onClick={typeHandler}>Aptitude series</button>
+            <button id="btn1" onClick={type2Handler}>Technical series</button>
             <button onClick={type3Handler}>HR round series</button>
             </div>
             <CourseList items={course} type={type}/>

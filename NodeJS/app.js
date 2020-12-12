@@ -18,7 +18,7 @@ app.use((req,res,next)=>{
 
 
 app.post('/login',loginController.sendMail);
-
+app.post('/course-upload',courseController.upload);
 app.post('/course',courseController.courseList);
 app.get('/verify',loginController.verifyMail);
 

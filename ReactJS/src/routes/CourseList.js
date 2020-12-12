@@ -19,10 +19,11 @@ const CourseList = props => {
       
       {props.items.map(user => (
         <CourseItem
-          key={user.title}
           title={user.title}
           type={user.type}
-          src={user.link}
+          src={user.id}
+          short={user.short}
+          long={user.long}
         />
       ))}
     </ul>

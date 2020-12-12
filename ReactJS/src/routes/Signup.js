@@ -61,7 +61,7 @@ const Signup=()=>{
             }
             catch(err){
                 console.log(err);
-                seterror("Please provide valid email")
+                seterror("Please provide valid email or Check your Network")
                 setHeader("Signup failed")
             }
             else{

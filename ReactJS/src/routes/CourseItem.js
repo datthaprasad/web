@@ -11,12 +11,12 @@ const CourseItem = props => {
             <source src="https://www.youtube.com/watch?v=3RC4xVMdI78" type="video/mp4"/>
       </video> */}
       <div style={{paddingTop:"3%",paddingBottom:"2%"}}>
-      <iframe width="75%" height="350vh" src={`https://www.youtube.com/embed/${props.src}?autoplay=0&mute=1&controls=0`}>
+      <iframe title={props.title} width="75%" height="350vh" src={`https://www.youtube.com/embed/${props.src}?autoplay=0&mute=1&controls=0`}>
 </iframe>
       
 <h3>{props.title}</h3>
-      <h4>{props.type}</h4>
-      <p>{props.src}{props.title}</p>
+      <h4>{props.short}</h4>
+      <p>{props.long}</p>
       </div>
       </li>
     
