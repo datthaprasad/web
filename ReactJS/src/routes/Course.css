@@ -1,28 +1,44 @@
 .btn-group button {
     width: 33%;
     background-color: black; /* Green background */
-    border: 3px solid  #0748fc; /* Green border */
+    border: 2px solid  #0748fc; /* Green border */
     color: white; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
+    margin-left: 0%;
   }
 
   .tn{
     width: 100%;
     background-color: black; /* Green background */
-    border: 3px solid  #0748fc; /* Green border */
+    border: 1px solid  #0748fc; /* Green border */
     color: white; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
   }
   /* Add a background color on hover */
+  .tn:hover {
+    background-color:  #9fb7fa;
+    border: 2px solid black;
+  }
+  .tn:focus{
+      background-color:  #0748fc;
+      border: 2px solid black;
+  }
   .btn-group button:hover {
     background-color:  #9fb7fa;
   }
   .btn-group button:focus{
       background-color:  #0748fc;
+      border: 2px solid black;
   }
+  .btn-group button:active{
+    background-color:  #0748fc;
+    border: 2px solid black;
+}
+
+
   h1{
       text-align: center;
       color:  #0748fc;

@@ -1,10 +1,16 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import "./Form.css";
 import ErrorModel from '../UIelements/Error';
 import LoadingSpinner from '../UIelements/LoadingSpinner'
 import { useHttpClient } from "./Http-Hook";
 
 const Form=()=>{
+  useEffect(()=>{
+    document.body.style.background= "url('https://www.myamcat.com/blog/wp-content/uploads/2016/02/graduation-hats.jpg') no-repeat center";
+    document.body.style.backgroundRepeat="no-repeat";
+    document.body.style.backgroundSize="cover";
+    document.body.style.backgroundPosition="center";
+},[]);
         const [pass_error,seterror]=useState();
         const {isLoading,error,sendRequest,clearError,headers}=useHttpClient();
         const [header,setHeader]=useState();        
@@ -81,7 +87,7 @@ const Form=()=>{
             {isLoading && <LoadingSpinner asOverlay/>}
     <div className="wrapper">
   <div className="title">
-    <h1>Add new Course</h1>
+    <h1>New Course</h1>
   </div>
   <div className="drive-form">
     <div className="input-fields">

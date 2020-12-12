@@ -8,9 +8,12 @@ import { useHistory } from "react-router-dom";
 import { AuthContext } from '../Hooks/AuthContext';
 
 const Course=()=>{
-    useEffect((()=>{
+    useEffect(()=>{
         document.getElementById("btn1").click();
-    }),[])
+        document.body.style.background="none"
+
+    },[])
+    
     const [type,setType]=useState("");
     const [course,setcourse]=useState([]);
     const {isLoading,error,sendRequest,clearError}=useHttpClient();
@@ -26,7 +29,7 @@ const Course=()=>{
                     'POST',
                     {'Content-Type':'application/json'},
                     JSON.stringify({
-                        type:"T"
+                        type:"A"
                     })
                     
                     );
@@ -48,7 +51,7 @@ const Course=()=>{
                     'POST',
                     {'Content-Type':'application/json'},
                     JSON.stringify({
-                        type:"A"
+                        type:"T"
                     })
                     
                     );
@@ -87,16 +90,19 @@ const Course=()=>{
         <React.Fragment>
         {error && <ErrorModel error={error} onClear={clearError}/>}
         {isLoading && <LoadingSpinner asOverlay/>}
-        <div style={{paddingTop:"5%",textAlign:"center"}}>
+        {!auth.isLogedIn && <h1 style={{paddingTop:"5%",textAlign:"center"}}> you dont have permission without login</h1>}
+        {auth.isLogedIn && <div style={{paddingTop:"5%",textAlign:"center"}}>
             <h1>COURSES YOU WANT</h1>
              {auth.isAdmin && <button className="tn" onClick={form}>New Course</button>}
             <div class="btn-group">
-            <button  onClick={typeHandler}>Aptitude series</button>
-            <button id="btn1" onClick={type2Handler}>Technical series</button>
+            <button id="btn1" onClick={typeHandler}>Aptitude series</button>
+            <button  onClick={type2Handler}>Technical series</button>
             <button onClick={type3Handler}>HR round series</button>
             </div>
+            <div style={{marginLeft:"6%"}}>
             <CourseList items={course} type={type}/>
-        </div>
+            </div>
+        </div>}
 
         </React.Fragment>
     )
