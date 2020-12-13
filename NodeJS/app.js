@@ -3,6 +3,7 @@ const bodyParser=require('body-parser');
 const loginController=require('./Controller/loginController')
 const mongoose=require('mongoose');
 const courseController = require('./Controller/courseController');
+const driveController=require('./Controller/driveController')
 // const { driveList } = require('./Controller/driveController');
 
 const app=express();
@@ -19,6 +20,8 @@ app.use((req,res,next)=>{
 
 app.post('/login',loginController.sendMail);
 app.post('/course-upload',courseController.upload);
+app.post('/drive-upload',driveController.upload)
+app.get('/drive',driveController.driveList)
 app.post('/course',courseController.courseList);
 app.get('/verify',loginController.verifyMail);
 

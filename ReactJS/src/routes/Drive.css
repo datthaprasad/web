@@ -1,0 +1,21 @@
+.tn1{
+    width: 80%;
+    background-color: black; /* Green background */
+    border: 1px solid  #8d96b1; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px;/* Some padding*/
+    cursor: pointer; /* Pointer/hand icon */
+    margin-left: 10%;
+    margin-top: 1%;
+    border-radius: 5vh;
+    border: 5px double #0748fc;
+  }
+  /* Add a background color on hover */
+  .tn1:hover {
+    background-color:  #9fb7fa;
+    border: 2px solid black;
+  }
+  .tn1:focus{
+      background-color:  #0748fc;
+      border: 2px solid black;
+  }

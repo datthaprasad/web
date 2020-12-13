@@ -1,10 +1,10 @@
 const mongoose=require('mongoose');
 const driveSchema=new mongoose.Schema({
     name: {type:String},
-    post:{type:String},
-    description:{type:String},
+    role:{type:String},
     link:{type:String},
-    last_date:{type:String},
+    date:{type:String},
+    desc:{type:String},
   
 });
 

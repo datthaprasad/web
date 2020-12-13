@@ -1,37 +1,40 @@
-.card-container{
-    width: 60%;
-    height: 65%;
-    background: #FFF;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    box-shadow: 0px 1px 10px 1px #000;
-    overflow: hidden;
-    display: inline-block;
-    }
+.car {
+    /* Add shadows to create the "card" effect */
+    width: 93%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-bottom-left-radius: 10vh;
+    border-bottom-right-radius: 10vh;
+    border-top-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    margin-left: 3.5%;
+    padding-bottom: 2%;
+    margin-bottom: 3%;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .car:hover {
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.9);
+  }
+  .car video{
+      width: 95%;
+  }
     .upper-container{
-    height: 25vh;
-    background: #042747;
+    border-top-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    height: 12vh;
+    background: #0748fc;
     }
-    .image-container{
-    background: white;
-    width: 25vh;
-    height: 25vh;
-    border-radius: 70%;
-    border: 1px double black;
-    padding: 5px;
-    transform: translate(23vh,10vh);
-
+    .title_drive h1{
+        color: white;
+        font-weight: 400;
+        padding: 4vh;
     }
-    .image-container img{
-    width: 22vh;
-    height: 22vh;
-    border-radius: 70%;
-    }
+    
     .lower-container{
-    height: 280px;
+        border-bottom-left-radius: 10vh;
+        border-bottom-right-radius: 10vh;
+    height: 30%;
     background: #FFF;
     padding: 20px;
     padding-top: 40px;
@@ -41,6 +44,7 @@
     box-sizing: border-box;
     line-height: 1.0;
     font-weight: lighter;
+    padding:2vh;
     }
     .lower-container h4{
     color: #042747;
@@ -54,7 +58,7 @@
     }
     .lower-container .btn{
     padding: 12px 40px;
-    background: #042747;
+    background: black;
     border: none;
     color: white;
     border-radius: 20px;
@@ -67,5 +71,5 @@
     .lower-container .btn:hover{
     background: transparent;
     color: #042747;
-    border: 2px solid #042747;
+    border: 2px solid black;/*#042747;*/
     }

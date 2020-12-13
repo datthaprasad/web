@@ -26,7 +26,7 @@ const Home=()=>{
 </div>
 </div>
 <div class="company">
-    <h2 style={{"padding":"0%"}}>TOP COMPANIES</h2>
+    <h2 style={{"padding":"0%",marginTop:"3%",marginBottom:"0%"}}>TOP COMPANIES</h2>
   </div>
 
 

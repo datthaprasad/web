@@ -3,6 +3,7 @@ import "./Form.css";
 import ErrorModel from '../UIelements/Error';
 import LoadingSpinner from '../UIelements/LoadingSpinner'
 import { useHttpClient } from "./Http-Hook";
+import ErrorModal from "../UIelements/Error";
 
 const Form=()=>{
   useEffect(()=>{
@@ -75,7 +76,6 @@ const Form=()=>{
           }
       }
       catch(err){
-
       }
 
     }
@@ -85,7 +85,7 @@ const Form=()=>{
            {pass_error && <ErrorModel header={header} error={pass_error} onClear={()=>{seterror()}}/>} 
             {error && <ErrorModel header={headers} error={error} onClear={clearError}/>}
             {isLoading && <LoadingSpinner asOverlay/>}
-    <div className="wrapper">
+    {!isLoading && <div className="wrapper">
   <div className="title">
     <h1>New Course</h1>
   </div>
@@ -102,7 +102,7 @@ const Form=()=>{
       <div className="btns" style={{textAlign:"center"}} onClick={formHandler}>submit</div>
     </div>
   </div>
-</div>
+</div>}
 </React.Fragment>);
 }
 

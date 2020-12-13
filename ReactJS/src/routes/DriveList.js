@@ -12,21 +12,18 @@ const DriveList = props => {
   }
 
   return (
-    <div style={{textAlign:"center",paddingTop:"3%"}}>
-    //   {/* <h3>{props.type}</h3> */}
-    <h2>{props.live}</h2>
-    <ul style={{listStyleType:'none',textAlign:"center"}}>
-      
+    
+    <ul style={{listStyleType:'none',textAlign:"center",paddingTop:"3%"}}>
       {props.items.map(user => (
         <DriveItem
-        //   key={user.title}
-        //   title={user.title}
-          type={user.type}/>
-        //   src={user.link}
+          name={user.name}
+          role={user.role}
+          link={user.link}
+          date={user.date}
+          desc={user.desc}/>
         
       ))}
     </ul>
-     </div>
   );
 };
 
