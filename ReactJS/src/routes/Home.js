@@ -4,6 +4,7 @@ import About from './About'
 const Home=()=>{
   useEffect(()=>{
     document.body.style.backgroundImage="none";
+    document.body.style.backgroundColor="rgba(255, 255, 255, 0.822)";
 },[]);
 
   return(
@@ -44,7 +45,7 @@ const Home=()=>{
     <div className="box">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKQrfH-7Qgi7SHB6QzDdliDRqB8AX-myxIMA&usqp=CAU"alt="image" border="3"style={{"border-color":"#555"}}/></div>
       <div className="box">
-      <img src="https://applyoffcampus.com/wp-content/uploads/2019/11/Wipro-logo.jpg"alt="image" border="3"style={{"border-color":"#555"}}/></div>
+      <img src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F593049db4bbe6f1b730b04f7%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D0%26cropX2%3D416%26cropY1%3D0%26cropY2%3D416"alt="image" border="3"style={{"border-color":"#555","width":"44%"}}/></div>
       
    </div>
    </main>

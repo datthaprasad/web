@@ -1,4 +1,4 @@
-const Drive=require('../Model/driveSchema');
+const Drive=require('../Model/DriveSchema');
 
 const driveList=async (req,res)=>{
     let list;

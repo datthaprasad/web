@@ -3,7 +3,6 @@ import "./Form.css";
 import ErrorModel from '../UIelements/Error';
 import LoadingSpinner from '../UIelements/LoadingSpinner'
 import { useHttpClient } from "./Http-Hook";
-import ErrorModal from "../UIelements/Error";
 
 const Form=()=>{
   useEffect(()=>{
@@ -59,7 +58,7 @@ const Form=()=>{
       try{
 
         data= await sendRequest(
-          `http://localhost:5000/course-upload`,
+          `https://job-portal-sit.herokuapp.com/course-upload`,
           'POST',
           {'Content-Type':'application/json'},
           JSON.stringify({

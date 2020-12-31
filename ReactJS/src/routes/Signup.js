@@ -36,7 +36,7 @@ const Signup=()=>{
             if(document.getElementById("password").value===document.getElementById("cpassword").value)
             try{
             data= await sendRequest(
-                `http://localhost:5000/login`,
+                `https://job-portal-sit.herokuapp.com/login`,
                 'POST',
                 {'Content-Type':'application/json'},
                 JSON.stringify({

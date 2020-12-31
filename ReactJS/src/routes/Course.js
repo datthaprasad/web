@@ -25,7 +25,7 @@ const Course=()=>{
         let list2;
         try{
                 list2=await sendRequest(
-                    `http://localhost:5000/course`,
+                    `https://job-portal-sit.herokuapp.com/course`,
                     'POST',
                     {'Content-Type':'application/json'},
                     JSON.stringify({
@@ -47,7 +47,7 @@ const Course=()=>{
         let list2;
         try{
                 list2=await sendRequest(
-                    `http://localhost:5000/course`,
+                    `https://job-portal-sit.herokuapp.com/course`,
                     'POST',
                     {'Content-Type':'application/json'},
                     JSON.stringify({
@@ -67,7 +67,7 @@ const Course=()=>{
         let list2;
         try{
                 list2=await sendRequest(
-                    `http://localhost:5000/course`,
+                    `https://job-portal-sit.herokuapp.com/course`,
                     'POST',
                     {'Content-Type':'application/json'},
                     JSON.stringify({

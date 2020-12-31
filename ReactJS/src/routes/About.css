@@ -8,12 +8,17 @@
     float: left;
     width: 33.3%;
     margin-bottom: 16px;
-    padding: 0 8px;
+    padding: 0 5px;
   }
   
   .carda {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
+    background-color: white;
+    border-top-right-radius: 5vh;
+    border-top-left-radius: 5vh;
+    
+    box-shadow: -4px 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
   
   .about-section1 {
@@ -49,6 +54,7 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
+    margin-top: 2%;
   }
   
   .button:hover {
@@ -70,4 +76,5 @@
   p{
     width:100%;
     text-align: center;
+    margin-top: 2%;
   }

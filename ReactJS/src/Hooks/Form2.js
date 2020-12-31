@@ -53,7 +53,7 @@ const Form2=()=>{
       try{
         let data;
         data= await sendRequest(
-          `http://localhost:5000/drive-upload`,
+          `https://job-portal-sit.herokuapp.com/drive-upload`,
           'POST',
           {'Content-Type':'application/json'},
           JSON.stringify({

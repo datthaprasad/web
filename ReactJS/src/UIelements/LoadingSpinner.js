@@ -4,10 +4,40 @@ import './LoadingSpinner.css';
 
 const LoadingSpinner = props => {
   return (
-    <div className={`${props.asOverlay && 'loading-spinner__overlay'}`}>
-      <div className="lds-dual-ring"></div>
-    </div>
-  );
+    <React.Fragment>
+    <div>
+       
+<div className={`${props.asOverlay && 'loading-spinner__overlay'}`}></div>
+
+   
+<div class='body'>
+  
+<span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</span>
+
+<div class='base'>
+<span></span>
+<div class='face'></div>
+</div>
+
+  
+</div>
+<div class='longfazers'>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+<h1 style={{color:"black",marginTop:"50vh",marginLeft:"5%"}}>Please wait</h1>
+</div>
+
+</div> 
+</React.Fragment>
+);
 };
 
 export default LoadingSpinner;

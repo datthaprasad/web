@@ -16,7 +16,7 @@ const Drive=()=>{
         document.body.style.background="none";
         try{
             const data=await sendRequest(
-               `http://localhost:5000/drive`
+               `https://job-portal-sit.herokuapp.com/drive`
                );
            console.log(data);
            setList(data);
@@ -40,7 +40,7 @@ const Drive=()=>{
         {isLoading && <LoadingSpinner asOverlay/>}
         {!auth.isLogedIn && <h1 style={{paddingTop:"20%",textAlign:"center"}}> You dont have permission without login</h1>}
         {auth.isLogedIn && <div style={{paddingTop:"6%"}}>
-        <h2>DRIVES YOU WANT</h2>
+        <h1>DRIVES YOU WANT</h1>
         {auth.isAdmin && <button className="tn1" onClick={form}>Add New Drive</button>}   
             <DriveList items={list}/>
         </div>}

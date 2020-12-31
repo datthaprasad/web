@@ -1,4 +1,4 @@
-const Course=require('../Model/courseschema');
+const Course=require('../Model/CourseSChema');
 
 const courseList=async(req,res)=>{
     let list;

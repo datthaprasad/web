@@ -28,7 +28,7 @@ const Login=()=>{
         let data;
         try{
         data= await sendRequest(
-            `http://localhost:5000/login`,
+            `https://job-portal-sit.herokuapp.com/login`,
             'POST',
             {'Content-Type':'application/json'},
             JSON.stringify({
@@ -79,7 +79,7 @@ const Login=()=>{
 
         {!isLoading && <div>
         
-        <div className="login-box">
+        <div className="car">
             <div className="textbox">
                 <i className="fas fa-user"/>
                 <input id="email" type="text" placeholder="Emial"/>
